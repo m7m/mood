@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
 //        // Do any additional setup after loading the view, typically from a nib.
         calculateMonthlies()
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     @IBOutlet weak var preIncome: UITextField!
@@ -68,6 +69,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.detailTextLabel?.text = "\(sublist[indexPath.row])"
         
         return (cell)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+            return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit
+        editingStyle: UITableViewCellEditingStyle, forRowAt indexPath:
+        IndexPath) {
+        if editingStyle == .delete {
+            list.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: . automatic)
+        }
     }
     
     override func didReceiveMemoryWarning() {

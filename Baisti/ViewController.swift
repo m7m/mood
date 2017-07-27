@@ -12,7 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        // Do any additional setup after loading the view, typically from a nib.
+        calculateMonthlies()
     }
     
     @IBOutlet weak var preIncome: UITextField!
@@ -48,7 +49,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: OUTPUT Monthlies
     @IBOutlet weak var monthlyExpenses: UILabel!
     var list: Array = ["Food","Education","Clothing"]
-    var sublist: Array = ["300","120","83.333"]
+    let sublist: Array = [300.000, 120.000,83.333]
+    
+    func calculateMonthlies () {
+        let addTwo: (Double, Double) -> Double = { x, y in x + y }
+        let sublistSum = sublist.reduce(0, addTwo)
+        monthlyExpenses.text = "\(sublistSum)"
+    }
 
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +65,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.textLabel?.text = list[indexPath.row]
-        cell.detailTextLabel?.text = sublist[indexPath.row]
+        cell.detailTextLabel?.text = "\(sublist[indexPath.row])"
+        
         return (cell)
     }
     

@@ -12,9 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
+//      Do any additional setup after loading the view, typically from a nib.
         calculateMonthlies()
-        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     @IBOutlet weak var preIncome: UITextField!
@@ -72,7 +71,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+        if cell.textLabel?.text != "" {
             return .delete
+        } else {
+            return .insert
+        }
     }
     
     func tableView(_ tableView: UITableView, commit
@@ -81,7 +85,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if editingStyle == .delete {
             list.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: . automatic)
+            tableView.reloadData()
+            calculateMonthlies()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {

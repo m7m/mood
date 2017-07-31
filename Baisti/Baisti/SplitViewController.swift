@@ -1,34 +1,23 @@
 //
-//  CurrentMonthViewController.swift
+//  SplitViewController.swift
 //  Baisti
 //
-//  Created by Mahmood al-Zadjali on 30/07/2017.
+//  Created by Mahmood al-Zadjali on 01/08/2017.
 //  Copyright © 2017 Mahmood al-Zadjali. All rights reserved.
 //
 
 import UIKit
 
-class CurrentMonthViewController: UIViewController {
-    @IBOutlet weak var currentMonthLabel: UILabel!
-    
-    func updateMonth() {
-        let now = NSDate()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM"
-        let nameOfMonth = dateFormatter.string(from: now as Date).uppercased()
-        currentMonthLabel.text = nameOfMonth
-    }
+class SplitViewController: UIViewController {
 
-    @IBOutlet weak var updateMe: UILabel!
-            var theText:String!
-
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateMonth()
-        print("\(theText)")
+        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func unwindToSplit(unwindSegue: UIStoryboardSegue) {
+        
     }
 
     override func didReceiveMemoryWarning() {

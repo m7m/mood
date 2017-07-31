@@ -2,23 +2,37 @@
 //  SetupViewController.swift
 //  Baisti
 //
-//  Created by Mahmood al-Zadjali on 30/07/2017.
+//  Created by Mahmood al-Zadjali on 01/08/2017.
 //  Copyright © 2017 Mahmood al-Zadjali. All rights reserved.
 //
 
 import UIKit
 
 class SetupViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var salaryValueTextField: UITextField!
+
+    func getTextOne () -> String? {
+        return salaryValueTextField.text
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "segueTest") {
+            var svc = segue!.destination as! CurrentMonthViewController;
+            
+            svc.theText = salaryValueTextField.text
+    
+        }
     }
     
 

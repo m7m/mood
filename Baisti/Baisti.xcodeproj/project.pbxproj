@@ -8,32 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		7435D8F71F2DFBC900FD93AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435D8F61F2DFBC900FD93AD /* AppDelegate.swift */; };
-		7435D8F91F2DFBC900FD93AD /* SplitWishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435D8F81F2DFBC900FD93AD /* SplitWishViewController.swift */; };
 		7435D8FC1F2DFBC900FD93AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435D8FA1F2DFBC900FD93AD /* Main.storyboard */; };
 		7435D8FE1F2DFBC900FD93AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435D8FD1F2DFBC900FD93AD /* Assets.xcassets */; };
 		7435D9011F2DFBC900FD93AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435D8FF1F2DFBC900FD93AD /* LaunchScreen.storyboard */; };
 		7435D9091F2DFC1000FD93AD /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435D9081F2DFC1000FD93AD /* RootPageViewController.swift */; };
-		7435D90F1F2E37B800FD93AD /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435D90E1F2E37B800FD93AD /* Expenses.swift */; };
-		74A383AA1F2E7C0100750B83 /* MonthliesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A383A91F2E7C0100750B83 /* MonthliesTableViewController.swift */; };
-		74A383AC1F2E7FD500750B83 /* MonthliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A383AB1F2E7FD500750B83 /* MonthliesTableViewCell.swift */; };
+		74A9B41F1F2FD1A1006B1B72 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B41E1F2FD1A1006B1B72 /* Expense.swift */; };
+		74A9B4211F2FD3C0006B1B72 /* ExpenseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B4201F2FD3C0006B1B72 /* ExpenseTableViewController.swift */; };
+		74A9B4231F2FD6E4006B1B72 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B4221F2FD6E4006B1B72 /* ExpenseTableViewCell.swift */; };
+		74A9B4251F2FE498006B1B72 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B4241F2FE498006B1B72 /* SplitViewController.swift */; };
+		74A9B4271F2FE507006B1B72 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B4261F2FE507006B1B72 /* WishlistViewController.swift */; };
+		74A9B4291F2FE656006B1B72 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B4281F2FE656006B1B72 /* SettingsViewController.swift */; };
+		74A9B42B1F2FE9A4006B1B72 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B42A1F2FE9A4006B1B72 /* SetupViewController.swift */; };
+		74A9B42F1F2FF048006B1B72 /* CurrentMonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9B42E1F2FF048006B1B72 /* CurrentMonthTableViewController.swift */; };
 		74D3FC311F2E52580062959F /* CurrentMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3FC301F2E52580062959F /* CurrentMonthViewController.swift */; };
-		74D3FC331F2E5EC40062959F /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3FC321F2E5EC40062959F /* SetupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7435D8F31F2DFBC900FD93AD /* Baisti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baisti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435D8F61F2DFBC900FD93AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7435D8F81F2DFBC900FD93AD /* SplitWishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWishViewController.swift; sourceTree = "<group>"; };
 		7435D8FB1F2DFBC900FD93AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7435D8FD1F2DFBC900FD93AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7435D9001F2DFBC900FD93AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7435D9021F2DFBC900FD93AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7435D9081F2DFC1000FD93AD /* RootPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
-		7435D90E1F2E37B800FD93AD /* Expenses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
-		74A383A91F2E7C0100750B83 /* MonthliesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthliesTableViewController.swift; sourceTree = "<group>"; };
-		74A383AB1F2E7FD500750B83 /* MonthliesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthliesTableViewCell.swift; sourceTree = "<group>"; };
+		74A9B41E1F2FD1A1006B1B72 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		74A9B4201F2FD3C0006B1B72 /* ExpenseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewController.swift; sourceTree = "<group>"; };
+		74A9B4221F2FD6E4006B1B72 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		74A9B4241F2FE498006B1B72 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		74A9B4261F2FE507006B1B72 /* WishlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		74A9B4281F2FE656006B1B72 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		74A9B42A1F2FE9A4006B1B72 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		74A9B42E1F2FF048006B1B72 /* CurrentMonthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentMonthTableViewController.swift; sourceTree = "<group>"; };
 		74D3FC301F2E52580062959F /* CurrentMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentMonthViewController.swift; sourceTree = "<group>"; };
-		74D3FC321F2E5EC40062959F /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +73,17 @@
 			isa = PBXGroup;
 			children = (
 				7435D8FA1F2DFBC900FD93AD /* Main.storyboard */,
+				74A9B4201F2FD3C0006B1B72 /* ExpenseTableViewController.swift */,
+				74A9B4221F2FD6E4006B1B72 /* ExpenseTableViewCell.swift */,
+				74A9B41E1F2FD1A1006B1B72 /* Expense.swift */,
 				7435D8F61F2DFBC900FD93AD /* AppDelegate.swift */,
-				7435D90E1F2E37B800FD93AD /* Expenses.swift */,
+				74A9B4261F2FE507006B1B72 /* WishlistViewController.swift */,
 				7435D9081F2DFC1000FD93AD /* RootPageViewController.swift */,
-				74D3FC321F2E5EC40062959F /* SetupViewController.swift */,
-				74A383AB1F2E7FD500750B83 /* MonthliesTableViewCell.swift */,
-				74A383A91F2E7C0100750B83 /* MonthliesTableViewController.swift */,
-				7435D8F81F2DFBC900FD93AD /* SplitWishViewController.swift */,
+				74A9B4241F2FE498006B1B72 /* SplitViewController.swift */,
+				74A9B42A1F2FE9A4006B1B72 /* SetupViewController.swift */,
+				74A9B4281F2FE656006B1B72 /* SettingsViewController.swift */,
 				74D3FC301F2E52580062959F /* CurrentMonthViewController.swift */,
+				74A9B42E1F2FF048006B1B72 /* CurrentMonthTableViewController.swift */,
 				7435D8FD1F2DFBC900FD93AD /* Assets.xcassets */,
 				7435D8FF1F2DFBC900FD93AD /* LaunchScreen.storyboard */,
 				7435D9021F2DFBC900FD93AD /* Info.plist */,
@@ -155,14 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7435D90F1F2E37B800FD93AD /* Expenses.swift in Sources */,
+				74A9B4211F2FD3C0006B1B72 /* ExpenseTableViewController.swift in Sources */,
+				74A9B41F1F2FD1A1006B1B72 /* Expense.swift in Sources */,
+				74A9B4231F2FD6E4006B1B72 /* ExpenseTableViewCell.swift in Sources */,
+				74A9B42F1F2FF048006B1B72 /* CurrentMonthTableViewController.swift in Sources */,
 				74D3FC311F2E52580062959F /* CurrentMonthViewController.swift in Sources */,
+				74A9B42B1F2FE9A4006B1B72 /* SetupViewController.swift in Sources */,
+				74A9B4271F2FE507006B1B72 /* WishlistViewController.swift in Sources */,
 				7435D9091F2DFC1000FD93AD /* RootPageViewController.swift in Sources */,
-				7435D8F91F2DFBC900FD93AD /* SplitWishViewController.swift in Sources */,
-				74D3FC331F2E5EC40062959F /* SetupViewController.swift in Sources */,
-				74A383AC1F2E7FD500750B83 /* MonthliesTableViewCell.swift in Sources */,
 				7435D8F71F2DFBC900FD93AD /* AppDelegate.swift in Sources */,
-				74A383AA1F2E7C0100750B83 /* MonthliesTableViewController.swift in Sources */,
+				74A9B4251F2FE498006B1B72 /* SplitViewController.swift in Sources */,
+				74A9B4291F2FE656006B1B72 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,36 +1,20 @@
 //
-//  MonthliesTableViewController.swift
+//  ExpenseTableViewController.swift
 //  Baisti
 //
-//  Created by Mahmood al-Zadjali on 31/07/2017.
+//  Created by Mahmood al-Zadjali on 01/08/2017.
 //  Copyright © 2017 Mahmood al-Zadjali. All rights reserved.
 //
 
 import UIKit
 
-class MonthliesTableViewController: UITableViewController {
+class ExpenseTableViewController: UITableViewController {
 
-    //MARK: Properties
-    
-    var expenses = [Expenses]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let savedExpenses = loadFromFile() {
-            expenses += savedExpenses
-            print("Shay minni")
-        } else {
-            loadSampleExpenses()
-            print("Naatttiiin")
-        }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    var expenses: [Expense] = [Expense(name: "Food", value: "300"), Expense(name: "Petrol", value: "50")]
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +24,6 @@ class MonthliesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -54,15 +37,25 @@ class MonthliesTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "monthlySetupCell", for: indexPath) as! MonthliesTableViewCell
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell", for: indexPath) as! ExpenseTableViewCell
+        
         let expense = expenses[indexPath.row]
         
         cell.update(with: expense)
-
+        cell.showsReorderControl = true
+        
         return cell
     }
+
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -82,19 +75,22 @@ class MonthliesTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
+
+    /*
     // MARK: - Navigation
 
-    
-    // MARK: Private Methods
-    private func loadSampleExpenses() {
-        let sampleExpenses: [Expenses] = [Expenses(expenseName:"Food", expenseValue: 300), Expenses(expenseName:"Petrol", expenseValue: 50), Expenses(expenseName:"Mobile", expenseValue: 25), Expenses(expenseName:"Shopping", expenseValue: 100)]
-        expenses = sampleExpenses
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
-    // MARK: Load Function
-    private func loadFromFile() -> [Expenses]? {
-        print("boo")
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Expenses.archiveURL.path) as? [Expenses]
-    }
+    */
+
 }

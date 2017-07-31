@@ -27,9 +27,7 @@ class RootPageViewController: UIPageViewController, UIPageViewControllerDataSour
         self.view.backgroundColor = .white
         self.dataSource = self
 
-        if let firstViewController = viewControllerList.first {
-            self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
-        }
+        self.setViewControllers([viewControllerList[1]], direction: .forward, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

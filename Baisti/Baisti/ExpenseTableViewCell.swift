@@ -1,18 +1,17 @@
 //
-//  MonthliesTableViewCell.swift
+//  ExpenseTableViewCell.swift
 //  Baisti
 //
-//  Created by Mahmood al-Zadjali on 31/07/2017.
+//  Created by Mahmood al-Zadjali on 01/08/2017.
 //  Copyright © 2017 Mahmood al-Zadjali. All rights reserved.
 //
 
 import UIKit
 
-class MonthliesTableViewCell: UITableViewCell {
+class ExpenseTableViewCell: UITableViewCell, UITextFieldDelegate {
 
-    @IBOutlet weak var expenseName: UITextField!
-    @IBOutlet weak var expenseValue: UITextField!
-    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var valueTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,10 +23,9 @@ class MonthliesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    func update(with expense: Expenses){
-        expenseName.text = expense.expenseName
-        expenseValue.text = expense.expenseValue
-    }
     
+    func update(with expense: Expense){
+        nameTextField.text = expense.name
+        valueTextField.text = expense.value
+    }
 }

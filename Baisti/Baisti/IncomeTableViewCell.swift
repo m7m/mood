@@ -1,5 +1,5 @@
 //
-//  ExpenseTableViewCell.swift
+//  IncomeTableViewCell.swift
 //  Baisti
 //
 //  Created by Mahmood al-Zadjali on 01/08/2017.
@@ -8,17 +8,11 @@
 
 import UIKit
 
-class ExpenseTableViewCell: UITableViewCell, UITextFieldDelegate {
+class IncomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var valueTextField: UITextField!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-    @IBAction func textEditingChanged(_ sender: Any) {
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,9 +20,5 @@ class ExpenseTableViewCell: UITableViewCell, UITextFieldDelegate {
 
         // Configure the view for the selected state
     }
-    
-    func update(with expense: Expense){
-        nameTextField.text = expense.name
-        valueTextField.text = expense.value
-    }
+
 }

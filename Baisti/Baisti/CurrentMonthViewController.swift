@@ -20,15 +20,15 @@ class CurrentMonthViewController: UIViewController {
     }
 
     @IBOutlet weak var updateMe: UILabel!
-            var theText:String!
 
-
+    var setupSalary = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        updateMe.text = setupSalary
+        
         updateMonth()
-        print("\(theText)")
     }
 
     override func didReceiveMemoryWarning() {

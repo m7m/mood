@@ -15,7 +15,7 @@ class Expense: NSObject, NSCoding {
     
     // MARK: Archiving Paths
     static let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let archiveURL = documentsDirectory.appendingPathComponent("Baisti")
+    static let archiveURL = documentsDirectory.appendingPathComponent("BaistiExpense")
     
     //MARK: Types
     struct PropertyKey {

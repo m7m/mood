@@ -22,20 +22,16 @@ class SetupViewController: UIViewController {
         super.viewDidLoad()
         
         if let savedIncome = loadFromFile() {
-            incomes += savedIncome
+            incomes = savedIncome
             print("incomessss")
         } else {
             loadSampleIncome()
             print("Loaded sample income.")
         }
         
-        if let income = income {
-            incomeNameTF.text = income.name
-            incomeValueTF.text = income.value
-        } else {
-            print("There's nothing here")
-        }
-        
+    }
+    @IBAction func saveThis(_ sender: Any) {
+        saveToFile()
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,10 +84,6 @@ class SetupViewController: UIViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        tableView.reloadData()
-//    }
 
     // MARK: - Navigation
 

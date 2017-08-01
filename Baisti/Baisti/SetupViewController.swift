@@ -85,6 +85,11 @@ class SetupViewController: UIViewController {
         }
     }
 
+    @IBAction func changed(_ sender: UITextField) {
+        saveToFile()
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

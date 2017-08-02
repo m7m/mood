@@ -21,13 +21,10 @@ class CurrentMonthViewController: UIViewController {
 
     @IBOutlet weak var updateMe: UILabel!
 
-    var setupSalary = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateMe.text = setupSalary
-        
+
         updateMonth()
     }
 

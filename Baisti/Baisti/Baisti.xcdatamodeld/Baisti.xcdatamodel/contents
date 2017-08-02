@@ -4,11 +4,11 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
+    <entity name="Income" representedClassName="Income" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Wishlist" representedClassName="Wishlist" syncable="YES" codeGenerationType="class">
+    <entity name="Wishlist" representedClassName="Wishlist" syncable="YES">
         <attribute name="begin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="purchase" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

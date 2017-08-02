@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		742897C51F31C347005242A0 /* Baisti.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 742897C31F31C347005242A0 /* Baisti.xcdatamodeld */; };
+		742897C71F3228D6005242A0 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742897C61F3228D6005242A0 /* ExpenseTableViewCell.swift */; };
 		7435D8F71F2DFBC900FD93AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7435D8F61F2DFBC900FD93AD /* AppDelegate.swift */; };
 		7435D8FC1F2DFBC900FD93AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435D8FA1F2DFBC900FD93AD /* Main.storyboard */; };
 		7435D8FE1F2DFBC900FD93AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435D8FD1F2DFBC900FD93AD /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		742897C41F31C347005242A0 /* Baisti.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Baisti.xcdatamodel; sourceTree = "<group>"; };
+		742897C61F3228D6005242A0 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		7435D8F31F2DFBC900FD93AD /* Baisti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baisti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7435D8F61F2DFBC900FD93AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7435D8FB1F2DFBC900FD93AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				7435D9081F2DFC1000FD93AD /* RootPageViewController.swift */,
 				74A9B4241F2FE498006B1B72 /* SplitViewController.swift */,
 				74A9B42A1F2FE9A4006B1B72 /* SetupViewController.swift */,
+				742897C61F3228D6005242A0 /* ExpenseTableViewCell.swift */,
 				74A9B4281F2FE656006B1B72 /* SettingsViewController.swift */,
 				7435D8FA1F2DFBC900FD93AD /* Main.storyboard */,
 				74D3FC301F2E52580062959F /* CurrentMonthViewController.swift */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742897C71F3228D6005242A0 /* ExpenseTableViewCell.swift in Sources */,
 				742897C51F31C347005242A0 /* Baisti.xcdatamodeld in Sources */,
 				74A9B42F1F2FF048006B1B72 /* CurrentMonthTableViewController.swift in Sources */,
 				74D3FC311F2E52580062959F /* CurrentMonthViewController.swift in Sources */,

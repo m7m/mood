@@ -14,6 +14,7 @@ class SetupViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var expenseTableView: UITableView!
 
+
     
     // MARK: Properties
     var expenseItems = [Expense]()
@@ -53,13 +54,18 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         self.expenseTableView.reloadData()
     }
 
-    @IBAction func addExpenseToDatabase(_ sender: UIButton) {
-        let expenseItem = Expense(context: moc)
-        expenseItem.value = Double()
-        expenseItem.name = String()
+    @IBAction func saveData(_ sender: UITextField) {
         
+    }
+    
+    @IBAction func addExpenseToDatabase(_ sender: UIButton) {
         appDelegate?.saveContext()
         
+        let expenseItem = Expense(context: moc)
+        expenseItem.value = Double()
+        expenseItem.name = String("")
+        
+        appDelegate?.saveContext()
         loadData()
 
     }

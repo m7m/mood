@@ -13,13 +13,13 @@ import os.log
 class SetupViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var expenseTableView: UITableView!
-
-
+    
     
     // MARK: Properties
     var expenseItems = [Expense]()
     var moc:NSManagedObjectContext!
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,12 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         loadData()
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadData()
     }
+    
     
     func loadData() {
         //1
@@ -53,26 +55,24 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         //4
         self.expenseTableView.reloadData()
     }
-
-    @IBAction func saveData(_ sender: UITextField) {
-        
-    }
+    
     
     @IBAction func addExpenseToDatabase(_ sender: UIButton) {
         appDelegate?.saveContext()
         
         let expenseItem = Expense(context: moc)
         expenseItem.value = Double()
-        expenseItem.name = String("")
+        expenseItem.name = String()
         
         appDelegate?.saveContext()
         loadData()
-
     }
 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return expenseItems.count
     }
+    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Step 1: Dequeue the cell
@@ -90,6 +90,7 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         //Step 4: Return cell
         return cell
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

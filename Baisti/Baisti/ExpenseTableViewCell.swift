@@ -7,22 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class ExpenseTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var expenseNameTF: UITextField!
+    var moc:NSManagedObjectContext!
     
+    @IBOutlet weak var expenseNameTF: UITextField!
     @IBOutlet weak var expenseValueTF: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+    
+    @IBAction func saveData(_ sender: UITextField) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let expense = Expense(context: context)
+        
+        if expenseNameTF != nil && expenseValueTF != nil {
+            expense.name = expenseNameTF.text!
+            let test = expenseValueTF.text
+            let testDouble = Double(test!)
+            expense.value = testDouble!
+            
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        } else {
+            print("OOPS!")
+        }
+    }
+    
 
 }

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import os.log
 
-class SetupViewController: UIViewController, UITableViewDataSource {
+class SetupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var expenseTableView: UITableView!
     
@@ -19,6 +19,7 @@ class SetupViewController: UIViewController, UITableViewDataSource {
     var expenseItems = [Expense]()
     var moc:NSManagedObjectContext!
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         
         moc = appDelegate?.persistentContainer.viewContext
         self.expenseTableView.dataSource = self
-        
+
         loadData()
     }
     
@@ -58,7 +59,7 @@ class SetupViewController: UIViewController, UITableViewDataSource {
     
     
     @IBAction func addExpenseToDatabase(_ sender: UIButton) {
-        appDelegate?.saveContext()
+//        appDelegate?.saveContext()
         
         let expenseItem = Expense(context: moc)
         expenseItem.value = Double()
@@ -89,6 +90,23 @@ class SetupViewController: UIViewController, UITableViewDataSource {
         
         //Step 4: Return cell
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let expense = expenseItems[indexPath.row]
+            context.delete(expense)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            do {
+                expenseItems = try context.fetch(Expense.fetchRequest())
+            }
+            catch {
+                print("Fetching Failed")
+            }
+        }
+        tableView.reloadData()
     }
     
     

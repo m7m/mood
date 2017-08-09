@@ -14,9 +14,7 @@ class SetupViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var incomeTableView: UITableView!
     @IBOutlet weak var expenseTableView: UITableView!
-    
-//    @IBOutlet weak var incomeNameTF: UITextField!
-//    @IBOutlet weak var incomeValueTF: UITextField!
+
     
     // MARK: Properties
     var expenseItems = [Expense]()
@@ -74,6 +72,15 @@ class SetupViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.expenseTableView.reloadData()
     }
     
+    @IBAction func addIncomeToDatabase(_ sender: UIButton) {
+        let incomeItem = Income(context: moc)
+        incomeItem.value = Double()
+        incomeItem.name = String()
+        
+        appDelegate?.saveContext()
+        loadData()
+    }
+    
     
     @IBAction func addExpenseToDatabase(_ sender: UIButton) {
 
@@ -84,38 +91,12 @@ class SetupViewController: UIViewController, UITableViewDataSource, UITableViewD
         appDelegate?.saveContext()
         loadData()
     }
-
-    @IBAction func addIncomeToDatabase(_ sender: UIButton) {
-        let incomeItem = Income(context: moc)
-        incomeItem.value = Double()
-        incomeItem.name = String()
-        
-        appDelegate?.saveContext()
-        loadData()
-    }
-    
-//    @IBAction func editingDidEnd(_ sender: UITextField) {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        let income = Income(context: context)
-//        
-//        if incomeNameTF.text != "" && incomeValueTF.description != "" {
-//            income.name = incomeNameTF.text!
-//            let test = incomeValueTF.text
-//            let testDouble = Double(test!)
-//            income.value = testDouble!
-//            
-//            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-//        } else {
-//            print("OOPS!")
-//        }
-//        loadData()
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (tableView.tag == 1) {
-            return expenseItems.count
-        } else if (tableView.tag == 2) {
+        if (tableView.tag == 2) {
             return incomeItems.count
+        } else if (tableView.tag == 1) {
+            return expenseItems.count
         } else {
             return 0
         }
@@ -124,36 +105,36 @@ class SetupViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (tableView.tag == 1) {
-            print("tag 0")
+        if (tableView.tag == 2) {
+            print("tag 2")
         //Step 1: Dequeue the cell
-        let cell = tableView.dequeueReusableCell(withIdentifier:"ExpenseCell", for: indexPath) as! ExpenseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier:"IncomeCell", for: indexPath) as! IncomeTableViewCell
         
         //Step 2: Fetch model objects to display
-        let expenseItem = expenseItems[indexPath.row]
+        let incomeItem = incomeItems[indexPath.row]
         
         //Step 3: Configure cell
-        let expenseName = expenseItem.name
-        let expenseValue = expenseItem.value
-        cell.expenseNameTF?.text = expenseName
-        cell.expenseValueTF?.text = "\(expenseValue)"
+        let incomeName = incomeItem.name
+        let incomeValue = incomeItem.value
+        cell.incomeNameTF?.text = incomeName
+        cell.incomeValueTF?.text = "\(incomeValue)"
         
         //Step 4: Return cell
         return cell
             
-        } else if (tableView.tag == 2) {
+        } else if (tableView.tag == 1) {
             print("tag 1")
             //Step 1: Dequeue the cell
-            let cell = tableView.dequeueReusableCell(withIdentifier:"IncomeCell", for: indexPath) as! IncomeTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier:"ExpenseCell", for: indexPath) as! ExpenseTableViewCell
             
             //Step 2: Fetch model objects to display
-            let incomeItem = incomeItems[indexPath.row]
+            let expenseItem = expenseItems[indexPath.row]
             
             //Step 3: Configure cell
-            let incomeName = incomeItem.name
-            let incomeValue = incomeItem.value
-            cell.incomeNameTF?.text = incomeName
-            cell.incomeValueTF?.text = "\(incomeValue)"
+            let expenseName = expenseItem.name
+            let expenseValue = expenseItem.value
+            cell.expenseNameTF?.text = expenseName
+            cell.expenseValueTF?.text = "\(expenseValue)"
             
             //Step 4: Return cell
             return cell
@@ -161,7 +142,7 @@ class SetupViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         } else {
             print("no tag")
-            let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath) as! ExpenseTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier:"Cell", for: indexPath) as! IncomeTableViewCell
             return cell
         }
     }

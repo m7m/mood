@@ -40,8 +40,5 @@ class ExpenseTableViewCell: UITableViewCell {
         } else {
             print("OOPS!")
         }
-        
     }
-    
-
 }

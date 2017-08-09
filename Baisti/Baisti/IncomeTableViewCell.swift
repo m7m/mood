@@ -20,10 +20,12 @@ class IncomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
+    
     @IBAction func saveData(_ sender: UITextField) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let income = Income(context: context)

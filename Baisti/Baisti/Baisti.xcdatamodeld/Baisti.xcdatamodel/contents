@@ -4,7 +4,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="Income" representedClassName="Income" syncable="YES">
+    <entity name="Income" representedClassName="Income" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
@@ -15,8 +15,8 @@
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Income" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Expense" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Income" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Wishlist" positionX="-36" positionY="18" width="128" height="105"/>
     </elements>
 </model>
